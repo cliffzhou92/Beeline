@@ -1,4 +1,4 @@
-FROM julia:1.1.0-stretch
+FROM julia
 
 LABEL maintainer="Aditya Pratapa <adyprat@vt.edu>"
 

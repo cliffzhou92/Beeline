@@ -19,9 +19,9 @@ input_settings:
     #   trueEdges: Name of the refrence network file in the
     #              edge list format. Needed for evaluation.
     datasets:
-        - name: "GSD"
-          exprData: "ExpressionData.csv"
-          cellData: "PseudoTime.csv"
+        - name: "emt_circuit_mes"
+          exprData: "ExpressionData_mes.csv"
+          cellData: "PseudoTime_mes.csv"
           trueEdges: "refNetwork.csv"
 
     # Denotes a list of algorithms to run. Each has the following parameters:
@@ -38,18 +38,18 @@ input_settings:
               
         - name: "PIDC"
           params: 
-              should_run: [True]
+              should_run: [False]
 
 
         - name: "GRNVBEM"
           params: 
-              should_run: [False]
+              should_run: [True]
 
               
 
         - name: "GENIE3"
           params: 
-              should_run: [False]
+              should_run: [True]
               
               
               
@@ -139,5 +139,5 @@ input_settings:
 output_settings:
 
     # Base output directory
-    output_dir: "outputs"
-    output_prefix: "GSD"
+    output_dir: "outputs/emt_mes"
+    output_prefix: "eat"
