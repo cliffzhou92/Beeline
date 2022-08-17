@@ -74,7 +74,7 @@ class BLRun(object):
         the set of algorithms to be run, and graphspace credentials, in
         addition to the custom parameters each runner may or may not define.
         '''
-        
+
         runners: Dict[int, Runner] = defaultdict(list)
         order = 0
         for dataset in self.input_settings.datasets:
@@ -93,7 +93,7 @@ class BLRun(object):
                     continue
 
                 runners[order] = Runner(data)
-                order += 1            
+                order += 1
         return runners
 
 
@@ -111,7 +111,7 @@ class BLRun(object):
                 executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
                 futures = [executor.submit(runner.run, base_output_dir)
                     for runner in self.runners[batch]]
-                
+
                 # https://stackoverflow.com/questions/35711160/detect-failed-tasks-in-concurrent-futures
                 # Re-raise exception if produced
                 for future in concurrent.futures.as_completed(futures):
@@ -120,8 +120,8 @@ class BLRun(object):
             else:
                 for runner in self.runners[batch]:
                     runner.run(output_dir=base_output_dir)
-                    
-                    
+
+
 class ConfigParser(object):
     '''
     Define static methods for parsing a config file that sets a large number
@@ -129,7 +129,7 @@ class ConfigParser(object):
     '''
     @staticmethod
     def parse(config_file_handle) -> BLRun:
-        config_map = yaml.load(config_file_handle)
+        config_map = yaml.full_load(config_file_handle)
         return BLRun(
             ConfigParser.__parse_input_settings(
                 config_map['input_settings']),
@@ -159,7 +159,7 @@ class ConfigParser(object):
                             for param in algorithm['params']))]
                 for combo in combos:
                     algorithms.append([algorithm['name'],combo])
-            
+
 
         return algorithms
 
@@ -170,9 +170,3 @@ class ConfigParser(object):
 
         return OutputSettings(output_dir,
                              output_prefix)
-
-
-
-
-
-                    

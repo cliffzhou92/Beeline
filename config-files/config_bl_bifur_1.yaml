@@ -6,7 +6,7 @@ input_settings:
     input_dir : "inputs"
 
     # Subdirectory of inputs that datasets are placed in
-    dataset_dir: "example"
+    dataset_dir: "example/beeline_data"
 
     # Denotes a list of datasets, each with the following parameters:
     #   name: Name of the dataset. May be used in logging or other
@@ -19,9 +19,9 @@ input_settings:
     #   trueEdges: Name of the refrence network file in the
     #              edge list format. Needed for evaluation.
     datasets:
-        - name: "emt_circuit_mes"
-          exprData: "ExpressionData_mes.csv"
-          cellData: "PseudoTime_mes.csv"
+        - name: "bifurcating"
+          exprData: "bifur_exp_1.csv"
+          cellData: "bifur_pst_1.csv"
           trueEdges: "refNetwork.csv"
 
     # Denotes a list of algorithms to run. Each has the following parameters:
@@ -75,7 +75,7 @@ input_settings:
 
         - name: "SCNS"
           params:
-              should_run: [True]
+              should_run: [False]
 
 
         - name: "SINCERITIES"
@@ -140,4 +140,4 @@ output_settings:
 
     # Base output directory
     output_dir: "outputs"
-    output_prefix: "emt_mes"
+    output_prefix: "bifur_1"

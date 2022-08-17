@@ -14,7 +14,7 @@ input_settings:
     #
     #   exprData: scRNA-Seq expression data file. Cells are along the
     #            columns and genes are along the rows.
-    #   cellData: a file containing pseudotime ordering, or any other 
+    #   cellData: a file containing pseudotime ordering, or any other
     #             information about cells.
     #   trueEdges: Name of the refrence network file in the
     #              edge list format. Needed for evaluation.
@@ -35,73 +35,73 @@ input_settings:
     #
     algorithms:
 
-              
+
         - name: "PIDC"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
 
 
         - name: "GRNVBEM"
-          params: 
+          params:
               should_run: [True]
 
-              
+
 
         - name: "GENIE3"
-          params: 
+          params:
               should_run: [True]
-              
-              
-              
+
+
+
         - name: "GRNBOOST2"
-          params: 
-              should_run: [False]
-              
-              
+          params:
+              should_run: [True]
+
+
         - name: "PPCOR"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               # p-value cutoff
               # Used in parsing output
               pVal: [0.01]
-              
-               
+
+
         - name: "SCODE"
           params:
-              should_run: [False]
+              should_run: [True]
               z: [10]
               nIter: [1000]
               nRep: [6]
 
         - name: "SCNS"
-          params: 
-              should_run: [False]
-              
-              
+          params:
+              should_run: [True]
+
+
         - name: "SINCERITIES"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               nBins: [10]
-              
-              
+
+
         - name: "LEAP"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               # Default maxLag value is 0.33
               maxLag: [0.33]
-             
-              
+
+
         - name: "GRISLI"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               L: [10]
               R: [3000]
               alphaMin: [0.0]
 
 
         - name: "SINGE"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               lambda: [0.01]
               dT: [15]
               num_lags: [5]
@@ -113,14 +113,14 @@ input_settings:
 
 
         - name: "SCRIBE"
-          params: 
-              should_run: [False]
+          params:
+              should_run: [True]
               ### required parameters
               # a list of delay values
               delay: ["5"]
               # any of 'RDI', 'uRDI', 'cRDI', or 'ucRDI'
               method: ['ucRDI']
-              # lower detection limit (expression below this 
+              # lower detection limit (expression below this
               # will be treated as zero.
               lowerDetectionLimit: [0]
               # expressionFamily: for synthetic data use uninormal
@@ -139,5 +139,5 @@ input_settings:
 output_settings:
 
     # Base output directory
-    output_dir: "outputs/emt_epi"
-    output_prefix: "eat"
+    output_dir: "outputs"
+    output_prefix: "emt_epi"
