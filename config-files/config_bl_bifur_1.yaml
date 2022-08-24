@@ -19,7 +19,7 @@ input_settings:
     #   trueEdges: Name of the refrence network file in the
     #              edge list format. Needed for evaluation.
     datasets:
-        - name: "bifurcating"
+        - name: "bifurcating_1"
           exprData: "bifur_exp_1.csv"
           cellData: "bifur_pst_1.csv"
           trueEdges: "refNetwork.csv"
@@ -134,6 +134,10 @@ input_settings:
               # False for real mRNA data
               ignorePT: [True]
 
+
+        - name: "spliceJAC"
+          params:
+              should_run: [True]
 
 # Output Settings: initialize base output folder names
 output_settings:
