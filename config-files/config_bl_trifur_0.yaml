@@ -38,28 +38,33 @@ input_settings:
 
         - name: "PIDC"
           params:
+              #should_run: [False]
               should_run: [True]
 
 
         - name: "GRNVBEM"
           params:
+              #should_run: [False]
               should_run: [True]
 
 
 
         - name: "GENIE3"
           params:
+              #should_run: [False]
               should_run: [True]
 
 
 
         - name: "GRNBOOST2"
           params:
+              #should_run: [False]
               should_run: [True]
 
 
         - name: "PPCOR"
           params:
+              #should_run: [False]
               should_run: [True]
               # p-value cutoff
               # Used in parsing output
@@ -68,6 +73,7 @@ input_settings:
 
         - name: "SCODE"
           params:
+              #should_run: [False]
               should_run: [True]
               z: [10]
               nIter: [1000]
@@ -75,17 +81,19 @@ input_settings:
 
         - name: "SCNS"
           params:
-              should_run: [False]
+              #should_run: [True]
+              should_run: [True]
 
 
         - name: "SINCERITIES"
           params:
+              #should_run: [False]
               should_run: [True]
               nBins: [10]
 
-
         - name: "LEAP"
           params:
+              #should_run: [False]
               should_run: [True]
               # Default maxLag value is 0.33
               maxLag: [0.33]
@@ -93,7 +101,9 @@ input_settings:
 
         - name: "GRISLI"
           params:
+              #should_run: [False]
               should_run: [True]
+
               L: [10]
               R: [3000]
               alphaMin: [0.0]
@@ -101,7 +111,9 @@ input_settings:
 
         - name: "SINGE"
           params:
+              #should_run: [False]
               should_run: [True]
+
               lambda: [0.01]
               dT: [15]
               num_lags: [5]
@@ -114,7 +126,9 @@ input_settings:
 
         - name: "SCRIBE"
           params:
+              #should_run: [False]
               should_run: [True]
+
               ### required parameters
               # a list of delay values
               delay: ["5"]
@@ -137,6 +151,7 @@ input_settings:
 
         - name: "spliceJAC"
           params:
+              #should_run: [False]
               should_run: [True]
 
 # Output Settings: initialize base output folder names
